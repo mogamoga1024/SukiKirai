@@ -2,9 +2,11 @@
 const $html = $("html");
 const $body = $("body");
 
-let hue = 330;
-const sukiHue = 330;
 const kiraiHue = 240;
+const sukiHue = 330;
+let hue = (kiraiHue + sukiHue) / 2;
+
+$bodySetBackgroundColor(hue);
 
 $html.on("click contextmenu", function(e) {
     // 左クリック
@@ -21,11 +23,13 @@ $html.on("click contextmenu", function(e) {
         return;
     }
 
-    const hsl = `hsl(${hue}, 100%, 80%)`;
-    $body.css("background-color", hsl);
+    $bodySetBackgroundColor(hue);
 
     return false;
 });
 
-
+function $bodySetBackgroundColor(hue) {
+    const hsl = `hsl(${hue}, 100%, 80%)`;
+    $body.css("background-color", hsl);
+}
 
