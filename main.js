@@ -13,12 +13,12 @@ $bodySetBackgroundColor(koukando);
 
 $html.on("click contextmenu", function(e) {
     // 左クリック
-    // 好きゲージが増える
+    // 好感度が増える
     if (e.which === 1) {
         koukando = Math.min(koukando + 1, maxKoukando);
     }
     // 右クリック
-    // 嫌いゲージが増える
+    // 好感度が下がる
     else if (e.which === 3) {
         koukando = Math.max(koukando - 1, minKoukando);
     }
