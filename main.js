@@ -9,7 +9,7 @@ const minKoukando = 0;
 const maxKoukando = 10;
 let koukando = Math.floor(maxKoukando / 2);
 
-$bodySetBackgroundColor(koukando);
+change$bodyBackgroundColor(koukando);
 
 $html.on("click contextmenu", function(e) {
     // 左クリック
@@ -26,12 +26,12 @@ $html.on("click contextmenu", function(e) {
         return;
     }
 
-    $bodySetBackgroundColor(koukando);
+    change$bodyBackgroundColor(koukando);
 
     return false;
 });
 
-function $bodySetBackgroundColor(koukando) {
+function change$bodyBackgroundColor(koukando) {
     const hue = koukandoToHue(koukando);
     const hsl = `hsl(${hue}, 100%, 80%)`;
     $body.css("background-color", hsl);
