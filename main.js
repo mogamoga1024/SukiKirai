@@ -1,6 +1,7 @@
 
 const $html = $("html");
 const $body = $("body");
+const $koukandoText = $("#koukando-text");
 
 const kiraiHue = 240;
 const sukiHue = 330;
@@ -27,6 +28,16 @@ $html.on("click contextmenu", function(e) {
     }
 
     change$bodyBackgroundColor(koukando);
+
+    if (koukando === minKoukando) {
+        $koukandoText.text("きらい");
+    }
+    else if (koukando === maxKoukando) {
+        $koukandoText.text("すき");
+    }
+    else {
+        $koukandoText.text("ふつう");
+    }
 
     return false;
 });
